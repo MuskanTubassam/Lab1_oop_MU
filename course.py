@@ -335,8 +335,6 @@ class Course:
                 raise KeyError(f"No student named {name}")
             del self.marks[name]
         
-
-
     # Return the number of students
     def __len__(self):
         return len(self.marks)
