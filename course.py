@@ -314,13 +314,6 @@ class Course:
 
         self.marks[student] = marks
 
-    #add remove student
-    def remove_student(self, name:str) -> None:
-        """Remove a Student , or raise Keyerror if missing."""
-        if name not in self.marks:
-            raise keyError(f"No student named {name}")
-        del self.marks[name]
-    print(remove_student())
     # Calculate the average marks
     def average(self):
         if len(self.marks) == 0:
@@ -334,6 +327,15 @@ class Course:
             return None
 
         return max(self.marks, key=self.marks.get)
+
+    # add remove_student in course class
+    def remove_student(self, name: str) -> None:
+            """Remove a student, or raise KayError if missing."""
+            if name not in self.marks:
+                raise KeyError(f"No student named {name}")
+            del self.marks[name]
+        
+
 
     # Return the number of students
     def __len__(self):
@@ -360,13 +362,15 @@ def load_course(name, filename):
 
                 if not line:
                     continue
-
+                parts = line.split(",")
+                if len(parts) < 2:
+                    continue
                 # Separate the student name and marks
-                student, mark = line.split(",")
+                student, marks = parts[0].strip(), parts[1]
 
                 try:
                     # Convert marks to an integer and add the student
-                    course.add_student(student, int(mark))
+                    course.add_student(student, int(marks))
 
                 except ValueError:
                     # Skip marks that are not numbers

@@ -1,9 +1,7 @@
-. Tumhare load_course() function ki output
-Agar marks.txt mein yeh data hai:
-Ali,88
-Sara,92
-Omar,75
-Bilal,abc
-Hina,120
-Zain,67
+Ali, 88
+Sara, 92
+Omar, 75
+Bilal, abc
+Hina, 120
+Zain, 67
 
