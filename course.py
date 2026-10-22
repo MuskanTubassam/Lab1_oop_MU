@@ -391,6 +391,7 @@ def load_course(name, filename):
 
 
 # Run this test only when course.py is executed directly
+
 if __name__ == "__main__":
     test_course = Course("Test")
     test_course.add_student("A", 50)
