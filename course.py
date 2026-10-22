@@ -314,6 +314,13 @@ class Course:
 
         self.marks[student] = marks
 
+    #add remove student
+    def remove_student(self, name:str) -> None:
+        """Remove a Student , or raise Keyerror if missing."""
+        if name not in self.marks:
+            raise keyError(f"No student named {name}")
+        del self.marks[name]
+    print(remove_student())
     # Calculate the average marks
     def average(self):
         if len(self.marks) == 0:
